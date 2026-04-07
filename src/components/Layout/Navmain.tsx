@@ -30,7 +30,7 @@ export function NavMain({
             const navigate=useNavigate();
             return (
               <SidebarMenuItem key={item.title}>
-                <SidebarMenuButton onClick={()=>navigate(`/${item.url}`)} className={(item.url==currlocation)?"bg-primary text-primary-foreground":""}>
+                <SidebarMenuButton onClick={()=>navigate(`/${item.url}`)} className={(item.url==currlocation)?"bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground":""}>
                   {Icon && <Icon className="size-4" />}
                   <span className="text-lg">{item.title}</span>
                 </SidebarMenuButton>

@@ -1,4 +1,3 @@
-"use client"
 
 import { TrendingUp } from "lucide-react"
 import { Bar, BarChart, CartesianGrid, XAxis } from "recharts"
@@ -21,22 +20,22 @@ import {
 export const description = "A multiple bar chart"
 
 const chartData = [
-  { month: "January", desktop: 186, mobile: 80 },
-  { month: "February", desktop: 305, mobile: 200 },
-  { month: "March", desktop: 237, mobile: 120 },
-  { month: "April", desktop: 73, mobile: 190 },
-  { month: "May", desktop: 209, mobile: 130 },
-  { month: "June", desktop: 214, mobile: 140 },
+  { month: "January", Income: 186, Expanse: 80 },
+  { month: "February", Income: 305, Expanse: 200 },
+  { month: "March", Income: 237, Expanse: 120 },
+  { month: "April", Income: 73, Expanse: 190 },
+  { month: "May", Income: 209, Expanse: 130 },
+  { month: "June", Income: 214, Expanse: 140 },
 ]
 
 const chartConfig = {
-  desktop: {
-    label: "Desktop",
+  Income: {
+    label: "Income",
     color: "var(--chart-1)",
   },
-  mobile: {
-    label: "Mobile",
-    color: "var(--chart-2)",
+  Expanse: {
+    label: "Expanse",
+    color: "var(--chart-4)",
   },
 } satisfies ChartConfig
 
@@ -64,8 +63,8 @@ export function ChartBarMultiple({className}:{
               cursor={false}
               content={<ChartTooltipContent indicator="dashed" />}
             />
-            <Bar dataKey="desktop" fill="var(--color-desktop)" radius={4} />
-            <Bar dataKey="mobile" fill="var(--color-mobile)" radius={4} />
+            <Bar dataKey="Income" fill="var(--chart-1)" radius={4}/>
+            <Bar dataKey="Expanse" fill="var(--chart-4)" radius={4}/>
           </BarChart>
         </ChartContainer>
       </CardContent>

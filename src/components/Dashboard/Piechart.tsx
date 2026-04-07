@@ -21,10 +21,10 @@ import { Table, TableBody, TableCell, TableRow } from "../ui/table"
 export const description = "A donut chart with text"
 
 const chartData = [
-  { browser: "Potato", visitors: 275, fill: "var(--color-chrome)" },
-  { browser: "carrot", visitors: 200, fill: "var(--color-safari)" },
-  { browser: "Electricity", visitors: 287, fill: "var(--color-firefox)" },
-  { browser: "other", visitors: 190, fill: "var(--color-other)" },
+  { browser: "Potato", visitors: 275, fill: "var(--chart-1)" },
+  { browser: "carrot", visitors: 200, fill: "var(--chart-2)" },
+  { browser: "Electricity", visitors: 287, fill: "var(--chart-3)" },
+  { browser: "other", visitors: 190, fill: "var(--chart-5)" },
 ]
 
 const chartConfig = {
@@ -112,12 +112,12 @@ export function ChartPieDonutText({className}:{
           </PieChart>
         </ChartContainer>
       </CardContent>
-      <CardFooter className="flex-col gap-2 text-sm pt-2 pb-2">
+      <CardFooter className="flex-col gap-2 text-sm pt-2 pb-2 bg-transparent">
        <Table>
         <TableBody>
             { chartData.map((item,idx)=>(
-                 <TableRow className={item.browser} key={idx}>
-                    <TableCell><div style={{ backgroundColor: item.fill }}>30%</div></TableCell>
+                 <TableRow className="bg-transparent" key={idx}>
+                    <TableCell><div className="flex items-center gap-2"><div className="h-3 w-3 rounded-sm" style={{ backgroundColor: item.fill }}></div> <span className="font-medium">{((item.visitors / totalVisitors) * 100).toFixed(0)}%</span></div></TableCell>
                     <TableCell >{item.browser}</TableCell>
                      <TableCell >{item.visitors}</TableCell>
                  </TableRow>
