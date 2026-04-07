@@ -4,7 +4,7 @@ import { ChartBarMultiple } from "@/components/Dashboard/Barchart";
 import { ChartPieDonutText } from "@/components/Dashboard/Piechart";
 export default function Analytics(){
     return (
-        <div className="grid grid-cols-3 gap-8 px-4 ">
+        <div className="grid lg:grid-cols-3 gap-8 px-4 grid-cols-1">
             <Card className="col-span-1 bg-gradient-to-tr from-card via-card from-card shadow-xl">
                 <CardHeader>
                   <CardDescription>Max Expanse</CardDescription>
@@ -48,7 +48,7 @@ export default function Analytics(){
                   <h1 className="text-sm font-bold">Items 15</h1>
                 </CardFooter>
             </Card>
-            <ChartBarMultiple className="col-span-2 shadow-xl"/>
+            <ChartBarMultiple className="lg:col-span-2 shadow-xl col-span-1"/>
            <ChartPieDonutText className="col-span-1 shadow-xl"/>
         </div>
     )

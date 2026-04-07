@@ -5,7 +5,7 @@ import { IconFileDownload } from "@tabler/icons-react"
 import { Switch } from "../ui/switch"
 
 export function SiteHeader() {
-    const [dark, setDark] = useState(false)
+    const [dark, setDark] = useState(true)
 
   useEffect(() => {
     if (dark) {

@@ -1,7 +1,6 @@
-import { TableDemo } from "./components/Transactions/Datatable"
+
 import { AppSidebar } from "./components/Layout/Sidebar"
 import { SidebarProvider ,SidebarInset, Sidebar, SidebarContent } from "./components/ui/sidebar"
-import { SectionCards } from "./components/Dashboard/Summarycard"
 import Analytics from "./Pages/Insight"
 import { Route ,Routes } from "react-router"
 import { Overview } from "./Pages/Overview"

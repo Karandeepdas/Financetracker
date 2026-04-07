@@ -68,7 +68,7 @@ export function BugReportForm() {
   }
 
   return (
-    <div className="flex flex-col items-center px-4 py-6 max-w-3xl mx-auto space-y-6">
+    <div className="flex flex-col items-center px-4 py-6 w-full max-w-[400px] min-w-[320px] mx-auto space-y-6 overflow-x-auto">
       <h1 className="text-2xl font-semibold">
           How can we help you?
         </h1>
@@ -76,7 +76,7 @@ export function BugReportForm() {
         <p className="text-muted-foreground">
           Describe your issue or question below.
         </p>
-    <Card className="w-full sm:max-w-md shadow-xl">
+    <Card className="w-full sm:max-w-xl shadow-xl">
       <CardHeader>
         <CardTitle>Bug Report</CardTitle>
         <CardDescription>

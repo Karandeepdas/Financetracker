@@ -15,9 +15,9 @@ export function SectionCards() {
     <div className="grid w-full grid-cols-1 lg:grid-cols-2 gap-6 px-4 lg:px-6 *:data-[slot=card]:bg-gradient-to-t *:data-[slot=card]:from-primary/5 *:data-[slot=card]:to-card *:data-[slot=card]:shadow-xs dark:*:data-[slot=card]:bg-card">
       <Card className="col-span-1 shadow-xl">
         <CardHeader>
-          <CardDescription>Total Revenue</CardDescription>
+          <CardDescription>Total Money</CardDescription>
           <CardTitle className="text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">
-            $1,250.00
+            ₹4,250.00
           </CardTitle>
           <CardAction>
             <Badge variant="outline">
@@ -37,7 +37,7 @@ export function SectionCards() {
       </Card>
       <Card className="col-span-1 shadow-xl">
         <CardHeader>
-          <CardDescription>New Customers</CardDescription>
+          <CardDescription>Total Transactions</CardDescription>
           <CardTitle className="text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">
             1,234
           </CardTitle>
@@ -59,9 +59,9 @@ export function SectionCards() {
       </Card>
       <Card className="col-span-1 shadow-xl">
         <CardHeader>
-          <CardDescription>Active Accounts</CardDescription>
+          <CardDescription>Unique items</CardDescription>
           <CardTitle className="text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">
-            45,678
+            789
           </CardTitle>
           <CardAction>
             <Badge variant="outline">
@@ -79,7 +79,7 @@ export function SectionCards() {
       </Card>
       <Card className="col-span-1 shadow-xl">
         <CardHeader>
-          <CardDescription>Growth Rate</CardDescription>
+          <CardDescription>INC/EXP Ratio</CardDescription>
           <CardTitle className="text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">
             4.5%
           </CardTitle>

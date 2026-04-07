@@ -1,75 +1,397 @@
-# React + TypeScript + Vite
+# 📊 Finance Tracker Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive finance dashboard built using **React**, **Tailwind CSS**, and **shadcn/ui**.  
+It provides interactive charts, sortable and paginated tables, summary analytics, and role-based UI views designed for scalability and usability across devices.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+# 🚀 Live Demo
 
-## React Compiler
+Live URL: <https://github.com/Karandeepdas/Financetracker>  
+GitHub Repo: <https://financetracker-mocha.vercel.app/>
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+---
 
-Note: This will impact Vite dev & build performances.
+# ✨ Features
 
-## Expanding the ESLint configuration
+## 📈 Interactive Charts
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+The dashboard includes visual analytics to help users understand financial trends.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Key Capabilities:
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- Multiple chart types for financial visualization
+- Responsive charts that adapt to screen size
+- Light/Dark mode color adaptation
+- Consistent color palette using theme variables
+- Designed for future real-time data integration
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Use Cases:
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- Expense distribution  
+- Income analysis  
+- Category-based spending insights  
+- Trend visualization  
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 📋 Advanced Data Table
+
+A fully functional transaction table built using **TanStack React Table**.
+
+### Features:
+
+- Client-side pagination  
+- Sorting functionality  
+- Responsive horizontal scrolling  
+- Sticky table header  
+- Role-based column visibility  
+- Action dropdown menu  
+- Dynamic page navigation:
+
+
+### Admin View:
+
+- Includes **Action column**
+- Can create new entries
+- Full table access
+
+### User View:
+
+- Action column hidden
+- Read-only data display
+
+---
+
+## 📊 Summary Cards Dashboard
+
+The dashboard displays summary statistics using responsive cards.
+
+### Features:
+
+- Responsive grid layout  
+- Gradient styling support  
+- Financial highlights display  
+- Clean card-based UI  
+
+### Layout Behavior:
+
+- Mobile → 1 column  
+- Tablet → 2 columns  
+- Desktop → 4 columns  
+
+### Example Metrics:
+
+- Total Revenue  
+- New Customers  
+- Active Accounts  
+- Growth Rate  
+
+---
+
+## 🧭 Sidebar Navigation
+
+A responsive sidebar designed using **shadcn sidebar components**.
+
+### Features:
+
+- Collapsible sidebar  
+- Mobile offcanvas navigation  
+- Hamburger menu support  
+- Smooth mobile transitions  
+- Persistent desktop sidebar  
+
+### Navigation Sections:
+
+- Overview  
+- Transactions  
+- Analytics  
+- Settings  
+- Help  
+
+---
+
+## 🌗 Dark / Light Mode
+
+Fully supported theme switching.
+
+### Features:
+
+- Dynamic theme toggle  
+- Theme-aware charts  
+- Theme-aware table styling  
+- CSS variable-based theming  
+
+### Light Mode:
+
+- White background  
+- Blue chart palette  
+- Black text  
+
+### Dark Mode:
+
+- Dark background  
+- Grey charts  
+- White text  
+
+---
+
+## 🛠 Help Section
+
+Includes a **user feedback form**.
+
+### Features:
+
+- Input form for user queries  
+- Structured layout  
+- Ready for backend/API integration  
+
+Supports:
+
+- Bug reports  
+- Feature requests  
+- User feedback  
+
+---
+
+## ⚙️ Settings Section
+
+Includes a **Work-In-Progress animated loader**.
+
+### Features:
+
+- Custom CSS animation  
+- Theme-aware colors  
+- Smooth looping animation  
+- Placeholder for future settings  
+
+---
+
+## 📱 Fully Responsive Design
+
+Works seamlessly across:
+
+- Mobile  
+- Tablet  
+- Desktop  
+
+### Responsive Behavior:
+
+- Sidebar → hamburger menu on mobile  
+- Tables → horizontal scroll  
+- Cards → stacked layout  
+- Layout adapts automatically  
+
+---
+
+# 🧰 Tech Stack
+
+## Frontend
+
+- React  
+- TypeScript  
+- Tailwind CSS  
+- shadcn/ui  
+- Lucide Icons  
+- Tabler Icons  
+
+---
+
+## Data Handling
+
+- TanStack React Table  
+
+Used for:
+
+- Pagination  
+- Sorting  
+- Table rendering  
+- Column control  
+
+---
+
+## Charts
+
+- Recharts  
+
+Used for:
+
+- Interactive visualizations  
+- Responsive charts  
+- Financial insights  
+
+---
+
+## Styling
+
+- Tailwind CSS  
+- CSS Variables  
+- Custom Animations  
+- Dark Mode Support  
+
+---
+
+## Deployment
+
+- GitHub  
+- Vercel / Netlify  
+
+---
+
+# 📦 Project Structure
+
+---
+
+# ⚙️ Installation & Local Setup
+
+## 1. Clone Repository
+git clone
+cd client
+
+## 2. Install Dependencies
+npm install
+
+## 3. Start Development Server
+npm run dev
+
+## 4. Open in Browser
+http://localhost:5173/
+
+---
+
+# 📊 Current Data Source
+
+Currently using:
+
+- Static mock data  
+
+Used for:
+
+- Fast UI development  
+- Predictable testing  
+- Feature validation  
+
+---
+
+# 🔮 Future Scope
+
+## 📂 CSV Data Integration
+
+Planned:
+
+- Upload CSV files  
+- Parse transaction data  
+- Generate dynamic insights  
+
+Possible features:
+
+- Most expensive item  
+- Least expensive item  
+- Frequent purchases  
+- Monthly trends  
+- Category analytics  
+
+---
+
+## 🧠 Smart Analytics
+
+Future enhancements:
+
+- Expense prediction  
+- Budget alerts  
+- AI-based recommendations  
+- Spending anomaly detection  
+
+---
+
+## 🔍 Advanced Filtering
+
+Planned:
+
+- Filter by category  
+- Filter by date range  
+- Search functionality  
+- Multi-column filtering  
+
+---
+
+## 🌐 Backend Integration
+
+Future architecture:
+
+Express
+Database(PostgreSQL/Mongodb)
+Auth 
+Enables:
+
+- Persistent data  
+- Secure storage  
+- Scalable architecture  
+
+---
+
+## 👤 Authentication System
+
+Planned:
+
+- Login system  
+- Role-based access  
+- Admin/User permissions  
+- Secure sessions  
+
+---
+
+## 📈 Real-Time Updates
+
+Possible integrations:
+
+- WebSockets  
+- Firebase  
+- Realtime APIs  
+
+Enables:
+
+- Live data updates  
+- Instant UI refresh  
+
+---
+
+## 📱 Mobile Optimization
+
+Future improvements:
+
+- Performance tuning  
+- Gesture interactions  
+- Native-like experience  
+
+---
+
+# ⚖️ Technical Trade-offs
+
+- Used client-side pagination for simplicity  
+- Used static data during development  
+- Prioritized UI responsiveness  
+- Accepted TanStack complexity for scalability  
+
+---
+
+# 🧪 Testing Strategy (Future)
+
+- Unit Testing — Jest  
+- Component Testing — React Testing Library  
+- End-to-End Testing — Cypress  
+
+---
+
+# 🧑‍💻 Author
+
+**Karandeep**  
+Frontend Developer  
+React | TypeScript | UI Engineering  
+
+---
+
+# 📜 License
+
+This project is open-source and intended for learning and demonstration purposes.
+

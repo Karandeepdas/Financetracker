@@ -24,11 +24,10 @@ import {
 } from "@/components/ui/dropdown-menu"
 import {
   Tabs,
-  TabsContent,
   TabsList,
   TabsTrigger,
 } from "@/components/ui/tabs"
-import { buttonVariants } from '@/components/ui/button'
+import { IconTrendingDown,IconTrendingUp } from "@tabler/icons-react"
 import {
   Pagination,
   PaginationContent,
@@ -37,10 +36,7 @@ import {
   PaginationNext,
   PaginationPrevious
 } from '@/components/ui/pagination'
-import { Badge } from "@/components/ui/badge"
-import { Label } from "@/components/ui/label"
 import { IconLayoutColumns,IconPlus,IconChevronDown } from "@tabler/icons-react"
-import { cn } from '@/lib/utils'
 import { Button } from "../ui/button"
 import { MoreVertical } from "lucide-react"
 import { useState ,useMemo} from "react"
@@ -68,8 +64,23 @@ export const columns: ColumnDef<Transaction>[] = [
     header: "Category",
   },
   {
-    accessorKey: "type",
-    header: "Type",
+  accessorKey: "type",
+  header: "Type",
+  cell: ({ row }) => {
+    const type = row.original.type
+
+    return (
+      <div className="flex items-center gap-2 capitalize">
+        {type === "income" ? (
+          <IconTrendingUp className="w-4 h-4 text-green-500" />
+        ) : (
+          <IconTrendingDown className="w-4 h-4 text-red-500" />
+        )}
+
+        {type}
+      </div>
+    )
+  },
   },
   {
     accessorKey: "amount",
@@ -107,13 +118,62 @@ export const columns: ColumnDef<Transaction>[] = [
     ),
   },
 ]
-const transactions:Transaction[] = [
+const transactions: Transaction[] = [
   {
-    item: "Potato",
+    item: "Salary",
+    category: "Income",
+    amount: 50000,
+    type: "income",
+    date: "2026-01-01",
+  },
+  {
+    item: "Groceries",
     category: "Groceries",
-    amount: 250,
+    amount: 1450,
     type: "expense",
-    date: "2026-02-02",
+    date: "2026-01-03",
+  },
+  {
+    item: "Electricity Bill",
+    category: "Utilities",
+    amount: 1820,
+    type: "expense",
+    date: "2026-01-05",
+  },
+  {
+    item: "Uber Ride",
+    category: "Transport",
+    amount: 280,
+    type: "expense",
+    date: "2026-01-08",
+  },
+  {
+    item: "Restaurant Dinner",
+    category: "Food",
+    amount: 920,
+    type: "expense",
+    date: "2026-01-12",
+  },
+  {
+    item: "Freelance Project",
+    category: "Income",
+    amount: 15000,
+    type: "income",
+    date: "2026-01-15",
+  },
+  {
+    item: "Internet Bill",
+    category: "Utilities",
+    amount: 999,
+    type: "expense",
+    date: "2026-01-18",
+  },
+  {
+    item: "Movie Night",
+    category: "Entertainment",
+    amount: 550,
+    type: "expense",
+    date: "2026-01-22",
   },
   {
     item: "Salary",
@@ -123,68 +183,123 @@ const transactions:Transaction[] = [
     date: "2026-02-01",
   },
   {
-    item: "Electricity Bill",
-    category: "Utilities",
-    amount: 1800,
-    type: "expense",
-    date: "2026-02-03",
-  },
-  {
-    item: "Uber Ride",
-    category: "Transport",
-    amount: 320,
+    item: "Groceries",
+    category: "Groceries",
+    amount: 1650,
     type: "expense",
     date: "2026-02-04",
   },
   {
-    item: "Freelance Project",
-    category: "Income",
-    amount: 12000,
-    type: "income",
-    date: "2026-02-05",
-  },
-  {
-    item: "Movie Night",
-    category: "Entertainment",
-    amount: 600,
-    type: "expense",
-    date: "2026-02-06",
-  },
-  {
-    item: "Restaurant",
-    category: "Food",
-    amount: 950,
+    item: "Electricity Bill",
+    category: "Utilities",
+    amount: 1780,
     type: "expense",
     date: "2026-02-07",
   },
   {
-    item: "Internet Bill",
-    category: "Utilities",
-    amount: 999,
+    item: "Fuel",
+    category: "Transport",
+    amount: 1200,
     type: "expense",
-    date: "2026-02-08",
+    date: "2026-02-10",
   },
   {
     item: "Gym Membership",
     category: "Health",
     amount: 1500,
     type: "expense",
-    date: "2026-02-09",
+    date: "2026-02-14",
   },
   {
     item: "Stock Profit",
     category: "Investment",
-    amount: 3000,
+    amount: 4200,
     type: "income",
-    date: "2026-02-10",
+    date: "2026-02-18",
+  },
+  {
+    item: "Restaurant",
+    category: "Food",
+    amount: 870,
+    type: "expense",
+    date: "2026-02-22",
+  },
+  {
+    item: "Salary",
+    category: "Income",
+    amount: 50000,
+    type: "income",
+    date: "2026-03-01",
+  },
+  {
+    item: "Groceries",
+    category: "Groceries",
+    amount: 1720,
+    type: "expense",
+    date: "2026-03-04",
+  },
+  {
+    item: "Water Bill",
+    category: "Utilities",
+    amount: 650,
+    type: "expense",
+    date: "2026-03-07",
+  },
+  {
+    item: "Taxi Ride",
+    category: "Transport",
+    amount: 340,
+    type: "expense",
+    date: "2026-03-12",
+  },
+  {
+    item: "Freelance Payment",
+    category: "Income",
+    amount: 11000,
+    type: "income",
+    date: "2026-03-18",
+  },
+  {
+    item: "Movie Tickets",
+    category: "Entertainment",
+    amount: 620,
+    type: "expense",
+    date: "2026-03-22",
+  },
+  {
+    item: "Salary",
+    category: "Income",
+    amount: 50000,
+    type: "income",
+    date: "2026-04-01",
+  },
+  {
+    item: "Groceries",
+    category: "Groceries",
+    amount: 1580,
+    type: "expense",
+    date: "2026-04-03",
+  },
+  {
+    item: "Internet Bill",
+    category: "Utilities",
+    amount: 999,
+    type: "expense",
+    date: "2026-04-05",
+  },
+  {
+    item: "Coffee & Snacks",
+    category: "Food",
+    amount: 260,
+    type: "expense",
+    date: "2026-04-07",
   },
 ]
-
 
 export function Datatable(){
   const [pagination, setPagination] = useState({
   pageIndex: 0,
-  pageSize: 7, // rows per page
+  pageSize: 9, // rows per page
 })
 const [role, setRole] = useState<"admin"|"user">("admin")
 const [sorting, setSorting] = useState<SortingState>([])
@@ -232,7 +347,7 @@ for (let i = 0; i < totalPages; i++) {
     return (
          <div className="space-y-4 px-4">
    <div className="md:flex items-center justify-between ">
-        <Select defaultValue="outline">
+         <Select defaultValue={role} onValueChange={(val)=>setRole(val as "user" | "admin")}>
           <SelectTrigger
             className="flex w-fit @4xl/main:hidden"
             size="sm"
@@ -241,11 +356,8 @@ for (let i = 0; i < totalPages; i++) {
             <SelectValue placeholder="Select a view" />
           </SelectTrigger>
           <SelectContent>
-            <Select value={role} onValueChange={(val) =>setRole(val as "admin" | "user")}>
-          <SelectTrigger className="flex w-fit @4xl/main:hidden" size="sm"><SelectValue /></SelectTrigger><SelectContent>
-          <SelectItem value="admin"> Admin</SelectItem>
-        <SelectItem value="user">User</SelectItem></SelectContent>
-          </Select>
+            <SelectItem value="admin">Admin</SelectItem>
+            <SelectItem value="user">User</SelectItem>
           </SelectContent>
         </Select>
          <Tabs
